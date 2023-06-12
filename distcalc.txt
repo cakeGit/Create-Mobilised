@@ -1,0 +1,30 @@
+//delete me
+
+// i forgor to push repo contentes 😀 so now im editing in a txt file fun
+
+Vec3 wheelAnchorPos =  entity.vecthetransformthing(pos);
+
+BlockPos[] offsets = new BlockPos[] {
+  entity.vecthetransformthing(applywheeloffset(pos,1)),
+  entity.vecthetransformthing(pos),
+  entity.vecthetransformthing(applywheeloffset(pos,-1))
+}
+
+for (int horisontalOffset = -1; horisontalOffset =< 1; horisontalOffset++) {
+  float currentGroundOffset;
+  boolean onGround;
+  for (int verticalOffset = -1; verticalOffset =< 1; verticalOffset++) {
+    BlockPos blockPos = offsets[horisontalOffset].offset(0, verticalOffset, 0);
+    BlockState state = entity.getWorld().getBlockState();
+    
+    //basic checks for now, will not suppourt slabs :(
+    if (state.canEntityStandOn(entity, state, pos) && (!onGround || currentGroundOffset > blockpos.y - wheelAnchorPos.y))
+        currentGroundOffset = blockPos.y - wheelAnchorPos.y;
+        onGround = true;
+    }
+  }
+  if (onGround) {
+    this.groundOffset = currentGroundOffset
+    return;
+  }
+}
