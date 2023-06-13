@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.cak.create.ontreads.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "cakclient.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}
